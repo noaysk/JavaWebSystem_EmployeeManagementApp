@@ -29,7 +29,14 @@ th {
 					value="検索">
 			</p>
 		</form>
-
+		<form action="controller" method="post">
+			<p>検索したい従業員の年齢を入力して下さい</p>
+			<p>
+				<input type="text" name="paramAge1"> <input type="text"
+					name="paramAge2"> <input type="hidden" name="btn"
+					value="AgeSearch"> <input type="submit" value="検索">
+			</p>
+		</form>
 		<c:if test="${not empty requestScope.message }">
 			<p class="message">${requestScope.message }</p>
 		</c:if>
