@@ -14,9 +14,9 @@ public class EmpDao {
 
 	public EmpDao() throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");
-		String url = "jdbc:mysql://localhost:3306/java_web_system?useSSL=false";
-		String user = "root";
-		String password = "noay1003";
+		String url = System.getenv("DB_URL");
+		String user = System.getenv("DB_USER");
+		String password = System.getenv("DB_PASSWORD");
 		connection = DriverManager.getConnection(url, user, password);
 	}
 
