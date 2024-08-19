@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import service.AgeSearch;
 import service.IdSearch;
 
 /**
@@ -46,6 +47,11 @@ public class Controller extends HttpServlet {
 				IdSearch ids = new IdSearch();
 				ids.execute(request);
 				jsp = "/disp.jsp";
+			}else if(searchBtn != null && searchBtn.equals("AgeSearch")){
+				AgeSearch ages = new AgeSearch();
+				ages.execute(request);
+				jsp = "/disp.jsp";
+
 			}else {
 				request.setAttribute("errorMessage", "不正アクセスです");
 				request.setAttribute("backAddress", "controller");
